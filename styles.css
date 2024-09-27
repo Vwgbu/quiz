@@ -1,0 +1,201 @@
+/* Light Theme (default) */
+:root {
+    --background-color: white;
+    --text-color: black;
+    --option-bg-color: #f4f4f4;
+    --option-hover-color: #d4d4d4;
+    --selected-color: #a4e4a4;
+    --incorrect-color: #e4a4a4;
+    --question-bg-color: #f0f8ff; /* Light blue background for the question container */
+    --question-border-color: #00aaff; /* Border color to enhance the container */
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 20px;
+    transition: background-color 0.5s, color 0.5s;
+  }
+  
+  .quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .question-container {
+    background-color: var(--question-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border: 2px solid var(--question-border-color); /* Subtle border */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .question-container:hover {
+    transform: scale(1.05); /* Add a slight zoom-in effect on hover */
+  }
+  
+  .question {
+    font-size: 1.4em;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .options {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .options li {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: var(--option-bg-color);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .options li:hover {
+    background-color: var(--option-hover-color);
+  }
+  
+  .selected {
+    background-color: var(--selected-color);
+  }
+  
+  .incorrect {
+    background-color: var(--incorrect-color);
+  }
+  
+  .button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transition */
+  }
+  
+  .button:hover {
+    background-color: #666;
+    transform: scale(1.05); /* Slight zoom-in effect on hover */
+  }
+  
+  .button:active {
+    transform: scale(0.95); /* Button presses down slightly when clicked */
+  }
+  
+  .button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+  }
+  
+  
+  .dark-mode-button {
+    position: absolute; /* Position it relative to the closest positioned ancestor */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transition */
+    font-size: 1em;
+  }
+  
+  .dark-mode-button:hover {
+    background-color: #555;
+    transform: scale(1.05); /* Slight zoom-in effect on hover */
+  }
+  
+  .dark-mode-button:active {
+    transform: scale(0.95); /* Button presses down slightly when clicked */
+  }
+  
+  
+  body.dark-mode {
+    --background-color: #333;
+    --text-color: #ddd;
+    --option-bg-color: #555;
+    --option-hover-color: #777;
+    --question-bg-color: #444;
+    --question-border-color: #888;
+    transition: background-color 0.5s, color 0.5s;
+  }
+  @keyframes jump {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); } /* Adjust the height of the jump */
+  100% { transform: translateY(0); }
+}
+
+.jumpy {
+  animation: jump 0.5s ease; /* Adjust the duration and easing as needed */
+}
+
+.score-counter {
+    font-size: 2rem; /* Large font size */
+    font-family: 'Arial', sans-serif; /* Fancy font family */
+    color: #ffcc00; /* Gold color for the text */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow for depth */
+    margin: 20px 0; /* Spacing around the score */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  }
+  
+  .score-counter.animated {
+    animation: fancy-effect 1s infinite; /* Add animation class */
+  }
+  
+  @keyframes fancy-effect {
+    0%, 100% {
+      transform: scale(1); /* Normal size */
+      color: #ffcc00; /* Original color */
+    }
+    50% {
+      transform: scale(1.2); /* Scale up for effect */
+      color: #ff6600; /* Change color during animation */
+    }
+  }
+  
+  .feedback-container {
+    margin: 20px 0;
+    padding: 10px;
+    border: 2px solid #4CAF50; /* Green border */
+    background-color: #f9f9f9; /* Light background */
+    color: #333; /* Dark text */
+    border-radius: 5px; /* Rounded corners */
+    display: none; /* Initially hidden */
+    animation: fadeIn 0.5s; /* Optional animation */
+  }
+  
+  .feedback-correct {
+    border-color: #4CAF50; /* Green for correct */
+  }
+  
+  .feedback-wrong {
+    border-color: #f44336; /* Red for wrong */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  #score-counter {
+    transition: transform 0.5s;
+  }
+  
+  .animated {
+    transform: scale(1.5); /* This will create a scale effect */
+  }
+  
